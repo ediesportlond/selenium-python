@@ -1,14 +1,14 @@
 import pytest
-import selenium.webdriver
+from selenium import webdriver
 
 @pytest.fixture
 def browser():
     
     # Initialize ChromeDriver instance
-    b = selenium.webdriver.Chrome(executable_path=r"./webdriver")
+    b = webdriver.Chrome()
 
     # Wait 10 s for elements to apear
-    b.impolicitly_wait(10)
+    b.implicitly_wait(10)
 
     # Return instance
     yield b
